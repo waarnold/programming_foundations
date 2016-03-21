@@ -1,0 +1,37 @@
+Q1.   male_age_total = 0
+      munsters.each do |name, details|
+        if details["gender"] == "male"
+          male_age_total += details["age"]
+        end
+      end
+
+Q2.   munsters.each do |person, details|
+        puts "#{person} is a #{details["age"]} year old #{details["gender"]}."
+      end
+
+Q3.   def tricky_method(a_string_param, an_array_param)
+        a_string_param += "rutabaga"
+        an_array_param += ["rutabaga"]
+
+        return a_string_param, an_array_param
+      end
+
+      my_string = "pumpkins"
+      my_array = ["pumpkins"]
+
+      my_string, my_array = tricky_method(my_string, my_array)
+
+      puts "My string looks like this now: #{my_string}"
+      puts "My array looks like this now: #{my_array}"
+
+Q4.   sentence = sentence.split(/\W/).reverse.join(" ").capitalize + "."
+
+Q5.   42 - 8 = 34. Calling mess_with_it() doesn't mutate the answer variable, so
+      its value remains unchanged throughout the program.
+
+Q6.   The original Munster family hash is mutated, because Spot's program directly
+      takes the hash as its object.
+
+Q7.   paper.
+
+Q8.   no.

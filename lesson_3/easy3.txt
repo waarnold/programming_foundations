@@ -1,0 +1,22 @@
+Q1.   %w(Fred Barney Wilma Betty BamBam Pebbles)
+
+Q2.   flintstones << "Dino"
+
+Q3.   flintstones << "Dino" << "Hoppy"
+      (OR)
+      flintstones.push("Dino").push("Hoppy") # push returns the array so we can chain
+      flintstones.concat(%w(Dino Hoppy))  # concat adds an array rather than one item
+
+Q4.   advice.slice!(0...(/house/ =~ advice))
+      (OR)
+      advice.slice!(0, advice.index('house'))
+      If we use slice (without the !), the original string 'advice' remains intact.
+
+Q5.   statement.count("t")
+      statement.scan('t').count   #are these different?
+
+Q6.   title.center(40)
+
+Q7.   
+
+Q10.

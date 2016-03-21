@@ -1,0 +1,73 @@
+Q1.   10.times {|idx| puts (" " * idx) + "The Flintstones Rock!" }
+
+Q2.   hash = {}
+      statement = statement.split(" ").join
+      statement.each_char do |char|
+        hash[char] = statement.count(char) unless hash.key?(char)
+      end
+
+      result = {}
+      letters = ('A'..'Z').to_a + ('a'..'z').to_a
+      letters.each do |letter|
+        letter_frequency = statement.scan(letter).count
+        result[letter] = letter_frequency if letter_frequency > 0
+      end
+
+Q3.   The error occurs when we try to add a string and a fixnum.
+      We can use string interpolation or convert the fixnum to a string.
+
+      puts "the value of 40 + 2 is #{40 + 2}"
+
+      puts "the value of 40 + 2 is " + (40 + 2).to_s
+
+Q4.   Modifying an array while iterating over it can cause problems because
+      iterators operate on the original array in real time. In the first example,
+      the elements are shifted and the array is shortened, but the index of the
+      element being worked on increments as usual so every other number is skipped.
+      In the second example, the items are removed before we reach them and the
+      iteration "stops short."
+
+      1
+      3
+
+      1
+      2
+
+Q5.   Use a while loop instead:
+
+      while dividend > 0
+        divisors << number / dividend if number % dividend == 0
+        dividend -= 1
+      end
+      puts "Please enter an integer greater than zero" if number <= 0
+
+      BONUS 1: This bit of code tests to see if the dividend divides cleanly into
+      the number, without a remainder — the whole purpose of the method!
+
+      BONUS 2: Ruby methods return the last expression evaluated, unless explicitly
+      written to return something else. Without the line 'divisors,' the last
+      expression in the method would be a loop, which would return the value 'nil.'
+
+Q6.   Using the shovel operator in rolling_buffer1 mutates the original buffer array,
+      while using the + operator does not.
+
+Q7.   This is a scoping issue. Methods cannot access local variables (such as the
+      'limit' variable in this case) unless they are passed into the method.
+      We can add a third parameter called 'limit' to the fib() method to pass in
+      the desired value.
+
+Q8.   def titleize(words)
+        words.split.map {|word| word.capitalize}.join(" ")
+        puts words
+      end
+
+Q9.   munsters.each do |k, v|
+        case v["age"]
+        when 0...18
+          v["age_group"] = "kid"
+        when 18...64
+          v["age_group"] = "adult"
+        else
+          v["age_group"] = "senior"
+        end
+      end

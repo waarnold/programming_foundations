@@ -1,0 +1,28 @@
+Q1.   - No change in ID once inside the block.
+      - After reassignment, the variables' values and IDs have all changed.
+      - The inner variables are set to the old, and they keep those same IDs.
+      - The outer variables have new values and ID numbers still after exiting
+        the block. The inner variables that were defined inside the block are
+        now inaccessible.
+
+Q2.     The main difference in using a method in this question (instead of a block)
+        is that the outer variables retain their same values and IDs after the method
+        call. That's because their values are being passed into the method, but they
+        themselves have no relationship to the variables being used inside the method
+        (though they share the same names).
+
+Q3.     The array is mutated by the shovel operator resulting in the following:
+
+        My array looks like this now: ["pumpkins", "rutabaga"]
+
+        The string, however, is not mutated. It's value is passed into the method
+        but any changes made are not stored in the local variable 'my_string.' They
+        are reassigned to a new string object. We should see the following:
+
+        My string looks like this now: pumpkins
+
+Q4.
+
+Q5.     def color_valid(color)
+          color == "blue" || color == "green"
+        end

@@ -1,0 +1,46 @@
+Q1.   Since the conditional does not evaluate as true, the variable 'greeting'
+      is never assigned a value. I expected to see an error message for referencing
+      an undefined variable, but now I understand that 'greeting' is given a
+      value 'nil' even though the if block where it was initialized is never
+      executed.
+
+Q2.   {:a=>"hi there"}
+      The 'informal_greeting' variable references the original object. When we use
+      a destructive method like << on it, the original object is changed.
+
+Q3.   A) one is: one
+         two is: two
+         three is: three
+
+      The function does not affect the values of the variables one, two or three.
+      It takes in their values as arguments but does not actually operate on the
+      original objects themselves.
+
+      B) Same as A.
+
+      C) one is: two
+         two is: three
+         three is: one
+
+      The gsub! function mutates the original objects one, two and three.
+
+Q4.   def uuid_maker
+        uuid = ""
+        characters = [*0..9, *"a".."f"]
+        insertion_points = [8, 13, 18, 23]
+        32.times { |_| uuid += characters.sample.to_s}
+        insertion_points.each { |index| uuid.insert(index, "-") }
+        uuid
+      end
+
+Q5.   def dot_separated_ip_address?(input_string)
+        dot_separated_words = input_string.split(".")
+        return false unless dot_separated_words.size == 4
+
+        while dot_separated_words.size > 0 do
+          word = dot_separated_words.pop
+          return false unless is_a_number?(word)
+        end
+
+        true
+      end
